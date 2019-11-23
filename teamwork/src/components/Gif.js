@@ -18,7 +18,7 @@ class Gif extends Component {
     // const {
     //   classes,
     // //   gif: { body, createdAt, gifImage, gifid, likeCount, commentCount }
-    // } = this.props;
+    // } = this.props; 
     return (
       <Card>
         <CardMedia /*image={gifImage}*/ title="Gif Image" />
