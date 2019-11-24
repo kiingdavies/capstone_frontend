@@ -4,41 +4,41 @@ import AppIcon from "../images/logo192.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-
 //MUI Stuff
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from "@material-ui/core/CircularProgress";
 import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "../util/theme";
 
-const styles = {
-    form: {
-        textAlign: "center"
-      },
-      image: {
-        margin: "20px auto 20px auto"
-      },
-      pageTitle: {
-        margin: "10px auto 10px auto"
-      },
-      textField: {
-        margin: "10px auto 10px auto"
-      },
-      button: {
-        marginTop: 20,
-        position: "relative"
-      },
-      customError: {
-        color: "red",
-        fontSize: "0.8rem",
-        marginTop: "10px"
-      },
-      progress: {
-          position: "absolute"
-      }
-}
+// const styles = {
+//     form: {
+//         textAlign: "center"
+//       },
+//       image: {
+//         margin: "20px auto 20px auto"
+//       },
+//       pageTitle: {
+//         margin: "10px auto 10px auto"
+//       },
+//       textField: {
+//         margin: "10px auto 10px auto"
+//       },
+//       button: {
+//         marginTop: 20,
+//         position: "relative"
+//       },
+//       customError: {
+//         color: "red",
+//         fontSize: "0.8rem",
+//         marginTop: "10px"
+//       },
+//       progress: {
+//           position: "absolute"
+//       }
+// }
 
 // const styles = (theme) => ({
 //   ...theme
@@ -68,7 +68,7 @@ class login extends Component {
       .post("/login", userData)
       .then(res => {
         console.log(res.data);
-        localStorage.setItem('PSIdToken', `Bearer ${res.data.token}`);
+        localStorage.setItem("PSIdToken", `Bearer ${res.data.token}`);
         this.setState({
           loading: false
         });
@@ -133,11 +133,11 @@ class login extends Component {
               variant="contained"
               color="primary"
               className={classes.button}
-              disabled={loading} 
+              disabled={loading}
             >
               Login
               {loading && (
-                  <CircularProgress size={30} className={classes.progress}/>
+                <CircularProgress size={30} className={classes.progress} />
               )}
             </Button>
             <br />
